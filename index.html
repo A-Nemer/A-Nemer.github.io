@@ -156,23 +156,38 @@
             </p>
         </section>
 
-        <!-- Math Section -->
-        <section id="math">
-            <h2>Math</h2>
-            <img src="https://as2.ftcdn.net/v2/jpg/01/59/30/79/1000_F_159307968_Ag88FlCW7OU1YkAqF5ntJGQNUp6LXZVX.jpg" alt="Math Illustration">
-            <p>
-                Mathematical modeling plays a key role in optimizing the performance of mud batteries. From calculating the energy output to determining the ideal proportions of materials, math helps in refining the efficiency of microbial fuel cells. Statistical analysis is also crucial in predicting the behavior of these batteries in real-world conditions, ensuring their reliability and scalability.
-            </p>
-        </section>
+       <!-- Math Section -->
+<section id="math">
+    <h2>Math</h2>
+    <img src="https://as2.ftcdn.net/v2/jpg/01/59/30/79/1000_F_159307968_Ag88FlCW7OU1YkAqF5ntJGQNUp6LXZVX.jpg" alt="Math Illustration">
+    <p>
+        Mathematical modeling plays a key role in optimizing the performance of mud batteries. From calculating the energy output to determining the ideal proportions of materials, math helps in refining the efficiency of microbial fuel cells. Statistical analysis is also crucial in predicting the behavior of these batteries in real-world conditions, ensuring their reliability and scalability.
+    </p>
+    <h3>Voltage Calculator</h3>
+    <p>Use this calculator to determine the voltage using Ohm's Law:</p>
+    <form id="voltage-calculator">
+        <label for="current">Current (in amps):</label>
+        <input type="number" id="current" step="any" placeholder="Enter current" required><br><br>
+        <label for="resistance">Resistance (in ohms):</label>
+        <input type="number" id="resistance" step="any" placeholder="Enter resistance" required><br><br>
+        <button type="button" onclick="calculateVoltage()">Calculate Voltage</button>
+    </form>
+    <p id="result" style="font-weight: bold; margin-top: 10px;"></p>
+    <script>
+        function calculateVoltage() {
+            const current = parseFloat(document.getElementById('current').value);
+            const resistance = parseFloat(document.getElementById('resistance').value);
 
-        <!-- Real-World Impact Section -->
-        <section id="impact">
-            <h2>Real-World Impact</h2>
-            <img src="https://img.freepik.com/free-photo/dreamy-aesthetic-color-year-tones-nature-landscape_23-2151393832.jpg" alt="Impact Illustration">
-            <p>
-                The real-world impact of mud batteries could revolutionize how we generate and store energy, particularly in underserved regions. By providing low-cost, sustainable energy solutions, mud batteries have the potential to improve lives by powering homes, schools, and small businesses. This project has the potential to contribute significantly to environmental sustainability and energy equity worldwide.
-            </p>
-        </section>
+            if (!isNaN(current) && !isNaN(resistance)) {
+                const voltage = current * resistance;
+                document.getElementById('result').textContent = `Calculated Voltage: ${voltage.toFixed(2)} volts`;
+            } else {
+                document.getElementById('result').textContent = "Please enter valid numerical values for both current and resistance.";
+            }
+        }
+    </script>
+</section>
+
 
       <!-- Project Media Section -->
 <section id="media">
